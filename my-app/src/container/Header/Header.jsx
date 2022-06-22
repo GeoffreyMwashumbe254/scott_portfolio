@@ -1,13 +1,13 @@
 import React from 'react'
 import {motion} from 'framer-motion';
-import { images } from '../../constants';
+import {images} from '../../constants';
 
 import './Header.scss';
 
 const scaleVariants = {
   whileInView: {
 
-    scale: [0, 1 ],
+    scale: [0, 1 ],  
     opacity: [0, 1],
     transition: {
       duration: 1,
@@ -21,7 +21,7 @@ const scaleVariants = {
 
 const Header = () => {
   return (
-    <div className="app__header app__flex">
+    <div id="home" className="app__header app__flex">
 
       <motion.div
       whileInView={{x :[-100, 0], opacity: [0, 1] }}
@@ -39,7 +39,7 @@ const Header = () => {
 
             </div>
 
-            <div className="badge-cmp app__flex">
+            <div className="tag-cmp app__flex">
               <p className="p-text">Blockchain Developer </p>
               <p className="p-text">Fullstack Developer </p>
 
@@ -57,7 +57,7 @@ const Header = () => {
       className="app__header-img"
       >
 
-        <img  src={images.profile} alt="profile_bg"/>
+        <img  src={images.geoffrey} alt="profile_bg"/>
 
         <motion.img
         whileInView={{ scale: [0, 1] }}
@@ -77,7 +77,13 @@ const Header = () => {
       
       >
 
-        {[]}
+        {[images.flutter, images.redux, images.sass].map((circle, index)=> (
+          <div className="circle-cmp app__flex" key={`circle-${index}`}>
+
+            <image src={circle} alt="circles" />
+
+          </div>
+        ))}
         
       </motion.div>
 
